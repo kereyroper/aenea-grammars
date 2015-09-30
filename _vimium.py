@@ -17,17 +17,17 @@ from aenea import (
 import dragonfly
 
 
-chrome_context = aenea.ProxyCustomAppContext(executable="/opt/google/chrome/chrome")
+chrome_context = aenea.ProxyCustomAppContext(query={'id': 'chrome'})
 grammar = dragonfly.Grammar('chrome', context=chrome_context)
 
 window_mapping = {
     # Tab navigation
-    'page (previous|left)': Key("cs-tab"),
-    'page (next|right)': Key("c-tab"),
-    'page <n>': Key("c-%(n)d"),
-    'page new': Key("c-t"),
-    'page reopen': Key("cs-t"),
-    'page close': Key("c-w"),
+    'page (previous|left)': Key("c-pgup"),
+    'page (next|right)': Key("c-pgdown"),
+    'page <n>': Key("w-%(n)d"),
+    'page new': Key("w-t"),
+    'page reopen': Key("ws-t"),
+    'page close': Key("w-w"),
     'page back': Key("s-h"),
     'page forward': Key("s-l"),
     'refresh': Key("r"),
