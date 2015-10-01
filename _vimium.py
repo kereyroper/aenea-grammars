@@ -52,8 +52,6 @@ gmail_mapping = {
     'open': Key("o"),
     'inbox': Key("g, i"),
     '[go to] label <text>': Key("g, l") + Text("%(text)s") + Key("enter"),
-    'trash': Key("hash"),
-    'archive': Key("e"),
     '(earl|early|earlier)': Key("j"),
     '(late|later)': Key("k"),
 }
