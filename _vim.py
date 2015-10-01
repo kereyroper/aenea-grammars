@@ -20,7 +20,7 @@ import dragonfly
 
 from _generic_edit import pressKeyMap
 
-vim_context = aenea.ProxyCustomAppContext(executable="gnome-terminal")
+vim_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('vim', context=vim_context)
 
 surroundCharsMap = {

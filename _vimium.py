@@ -35,8 +35,8 @@ window_mapping = {
     'link new': Key("s-f"),
 
     #  Moving around
-    'more': Key("j:10"),
-    'less': Key("k:10"),
+    'more': Key("c-e:10"),
+    'less': Key("c-y:10"),
     'top': Key("g, g"),
     'bottom': Key("s-g"),
     'back': Key("s-h"),
