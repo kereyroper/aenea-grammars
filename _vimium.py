@@ -17,7 +17,7 @@ from aenea import (
 import dragonfly
 
 
-chrome_context = aenea.ProxyCustomAppContext(executable="/opt/google/chrome/chrome")
+chrome_context = aenea.ProxyAppContext(executable="chromium")
 grammar = dragonfly.Grammar('chrome', context=chrome_context)
 
 window_mapping = {
