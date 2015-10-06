@@ -30,10 +30,10 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer into': Text("cd "),
 
     '(terminal|term) clear': Text("clear") + Key("enter"),
-    '(terminal|term) left': Key("c-pgup"),
-    '(terminal|term) right': Key("c-pgdown"),
-    '(terminal|term) new [tab]': Key("cs-t"),
-    '(terminal|term) (close|exit)': Key("c-c") + Text("exit") + Key("enter"),
+    '(terminal|term) left': Key("ws-["),
+    '(terminal|term) right': Key("ws-]"),
+    '(terminal|term) new [tab]': Key("w-t"),
+    '(terminal|term) (close|exit)': Key("c-d"),
 
     # Common words
     '(pseudo|sudo|pseudo-)': Text("sudo "),
