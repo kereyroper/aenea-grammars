@@ -17,7 +17,7 @@ except ImportError:
     print 'Unable to import Aenea client-side modules.'
     raise
 
-terminal_context = aenea.ProxyPlatformContext('linux')
+terminal_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('terminal', context=terminal_context)
 
 terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
@@ -30,8 +30,8 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer into': Text("cd "),
 
     '(terminal|term) clear': Text("clear") + Key("enter"),
-    '(terminal|term) left': Key("ws-["),
-    '(terminal|term) right': Key("ws-]"),
+    '(terminal|term) left': Key("w-lbrace"),
+    '(terminal|term) right': Key("w-rbrace"),
     '(terminal|term) new [tab]': Key("w-t"),
     '(terminal|term) (close|exit)': Key("c-d"),
 
