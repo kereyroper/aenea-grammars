@@ -5,15 +5,13 @@ Licensed under the LGPL3.
 
 """
 
-from dragonfly import Config, Section, Item, AppContext, Grammar, MappingRule, IntegerRef, Dictation, Choice
+import aenea
+from aenea import Config, Section, Item, AppContext, Grammar, MappingRule, IntegerRef, Dictation, Choice
 
-from lib.dynamic_aenea import (
-    DynamicContext,
+from aenea import (
     Key,
     Text,
 )
-
-from aenea.proxy_contexts import ProxyAppContext as NixAppContext
 
 hipchat_config = Config("HipChat")
 hipchat_config.usernames = Section("Username Mappings")
@@ -55,10 +53,11 @@ class ChatRule(MappingRule):
     ]
 
 
-nixContext = NixAppContext(executable="hipchat")
-winContext = AppContext(executable="hipchat")
+# nixContext = NixAppContext(executable="hipchat")
+# winContext = AppContext(executable="hipchat")
+context = aenea.ProxyCustomAppContext(query={'id': 'hipchat'})
 
-grammar = Grammar("hipchat_general", context=DynamicContext(winContext, nixContext))
+grammar = Grammar("hipchat_general", context=context)
 grammar.add_rule(NavigationRule())
 grammar.add_rule(ChatRule())
 grammar.load()
