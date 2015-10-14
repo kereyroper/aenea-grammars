@@ -28,9 +28,9 @@ class NavigationRule(MappingRule):
     mapping = {
         "move up [<n>]":                                    Key("cs-tab:%(n)d"),
         "move down [<n>]":                                  Key("c-tab:%(n)d"),
-        "close tab":                                        Key("c-w"),
-        "(join room | private message) <room>":             Key("c-j/25") + Text("%(room)s") + Key("enter"),
-        "search [room] history":                            Key("c-f"),
+        "close tab":                                        Key("w-w"),
+        "(join room | private message) <room>":             Key("w-n"),  # + Text("%(room)s"),
+        "search [room] history":                            Key("w-f"),
     }
 
     extras = [
