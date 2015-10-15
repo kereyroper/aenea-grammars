@@ -20,8 +20,9 @@ import dragonfly
 
 from _generic_edit import pressKeyMap
 
+pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
 vim_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
-grammar = dragonfly.Grammar('vim', context=vim_context)
+grammar = dragonfly.Grammar('generic', context=(pycharm_context | vim_context))
 
 surroundCharsMap = {
     'quotes': '"',
