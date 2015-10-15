@@ -79,6 +79,7 @@ specialCharMap = {
     "slash": "/",
     "equal": "=",
     "plus": "+",
+    "(quest|question mark)": "?",
     "space": " "
 }
 
