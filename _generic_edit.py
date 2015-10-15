@@ -77,7 +77,7 @@ specialCharMap = {
     "percent": "%",
     "and": "&",
     "slash": "/",
-    "equal": "=",
+    "(equals|equal)": "=",
     "plus": "+",
     "(quest|question mark)": "?",
     "space": " "
