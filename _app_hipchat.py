@@ -29,7 +29,7 @@ class NavigationRule(MappingRule):
         "move up [<n>]":                                    Key("cs-tab:%(n)d"),
         "move down [<n>]":                                  Key("c-tab:%(n)d"),
         "close tab":                                        Key("w-w"),
-        "(join room | private message) <room>":             Key("w-n"),  # + Text("%(room)s"),
+        "(new chat|join room|private message) <room>":      Key("w-n"),  # + Text("%(room)s"),
         "search [room] history":                            Key("w-f"),
     }
 
