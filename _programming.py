@@ -21,7 +21,8 @@ import sql_grammar
 
 pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
 vim_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'vim'})
-context = (pycharm_context | vim_context)
+ssh_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'ssh'})
+context = (pycharm_context | vim_context | ssh_context)
 generic_grammar = dragonfly.Grammar('generic', context=context)
 
 language_map = {
