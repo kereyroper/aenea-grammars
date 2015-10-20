@@ -22,8 +22,8 @@ grammar = dragonfly.Grammar('chrome', context=chrome_context)
 
 window_mapping = {
     # Tab navigation
-    'page (previous|left)': Key("cs-tab"),
-    'page (next|right)': Key("c-tab"),
+    'page (previous|left) [<n>]': Key("cs-tab:%(n)d"),
+    'page (next|right) [<n>]': Key("c-tab:%(n)d"),
     'page <n>': Key("c-%(n)d"),
     'page new': Key("c-t"),
     'page reopen': Key("cs-t"),
@@ -63,6 +63,9 @@ class Mapping(dragonfly.MappingRule):
         IntegerRef('n', 1, 99),
         Dictation('text'),
     ]
+    defaults = {
+        "n": 1,
+    }
 
 class MappingMail(dragonfly.MappingRule):
      mapping = gmail_mapping
