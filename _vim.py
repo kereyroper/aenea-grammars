@@ -94,7 +94,6 @@ basics_mapping = aenea.configuration.make_grammar_commands('vim', {
     'quit all': Key("escape, colon, q, a, enter"),
     'discard': Key("escape, colon, q, exclamation"),
     '(vim|vic) tab <n>': Key("escape, comma, %(n)d"),
-    'comma': Key("comma"),
     'comes': Key("comma, space"),
     'bish': Key("right, comma, space"),
     'cause': Key("colon, space"),
