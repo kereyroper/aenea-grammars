@@ -103,8 +103,8 @@ basics_mapping = aenea.configuration.make_grammar_commands('vim', {
 
     # Finding text
     'find <text>': Key("escape, slash") + Text("%(text)s") + Key("enter"),
-    'next': Key("escape, n"),
-    'prev|previous': Key("escape, N"),
+    'next [<n>]': Key("escape, n:%(n)d"),
+    '(prev|previous) [<n>]': Key("escape, N:%(n)d"),
     'clear search': Key("escape, colon, n, o, h, enter"),
 
     # Character operations
@@ -179,6 +179,9 @@ class Basics(dragonfly.MappingRule):
         Choice("pressKey", pressKeyMap),
         Choice("surroundChar", surroundCharsMap),
     ]
+    defaults = {
+        "n": 1,
+    }
 
 grammar.add_rule(Basics())
 grammar.load()
