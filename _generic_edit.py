@@ -336,7 +336,7 @@ def copy_command():
     if context.matches(window.executable, window.title, window.handle):
         return
     release.execute()
-    Key("c-c/3").execute()
+    Key("w-c/3").execute()
 
 
 def paste_command():
@@ -346,7 +346,7 @@ def paste_command():
     if context.matches(window.executable, window.title, window.handle):
         return
     release.execute()
-    Key("c-v/3").execute()
+    Key("w-v/3").execute()
 
 
 grammarCfg = Config("multi edit")
