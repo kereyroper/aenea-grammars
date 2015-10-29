@@ -125,10 +125,10 @@ basics_mapping = aenea.configuration.make_grammar_commands('vim', {
     'chord <n>': Key("escape, right, c, %(n)d, w"),
     'sword': Key("escape, right, v, e"),
     'sword <n>': Key("escape, right, v, e:%(n)d"),
-    'forward':  Key("escape, right, w, i"),
-    'forward <n>': Key("escape, right, %(n)d, w, i"),
-    'backward': Key("escape, b, i"),
-    'backward <n>': Key("escape, %(n)d, b, i"),
+    'aft':  Key("escape, right, w, i"),
+    'aft <n>': Key("escape, right, %(n)d, w, i"),
+    'stern': Key("escape, b, i"),
+    'stern <n>': Key("escape, %(n)d, b, i"),
     'stripword': Key("escape, b, left, del, e, a"),
 
     # Line operations
@@ -161,7 +161,6 @@ basics_mapping = aenea.configuration.make_grammar_commands('vim', {
     'go to [line] <n>': Key("escape") + Function(goto_line),
     'matching': Key("escape, percent"),
     'rash': Key("escape, down, s-a"),
-    'back': Key("escape, c-o"),
 
     # Plug-ins
     'curb': Key("c-p"),
