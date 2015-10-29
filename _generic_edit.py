@@ -41,7 +41,7 @@ from format import (
 )
 
 
-release = Key("shift:up, ctrl:up, alt:up")
+release = Key("shift:up, win:up, ctrl:up, alt:up")
 
 
 def cancel_and_sleep(text=None, text2=None):
@@ -390,6 +390,8 @@ grammarCfg.cmd.map = Item(
         "release alt": Key("alt:up"),
         "[(hold|press)] shift": Key("shift:down/3"),
         "release shift": Key("shift:up"),
+        "[(hold|press)] command": Key("win:down/3"),
+        "release command": Key("win:up"),
         "[(hold|press)] control": Key("ctrl:down/3"),
         "release control": Key("ctrl:up"),
         "release [all]": release,
