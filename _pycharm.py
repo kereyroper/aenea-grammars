@@ -27,6 +27,8 @@ grammar = dragonfly.Grammar('generic', context=pycharm_context)
 basics_mapping = aenea.configuration.make_grammar_commands('pycharm', {
     'back': Key('aw-left'),
     'file close': Key('w-w'),
+    'file left [<n>]': Key('c-pgup:%(n)d'),
+    'file right [<n>]': Key('c-pgdown:%(n)d'),
     'follow': Key("w-b"),
     'forward': Key('aw-right'),
     })
