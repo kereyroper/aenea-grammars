@@ -80,6 +80,7 @@ specialCharMap = {
     "(equals|equal)": "=",
     "plus": "+",
     "(quest|question mark)": "?",
+    "bang": "!",
     "(tild|tilde)": "~",
     "space": " "
 }
