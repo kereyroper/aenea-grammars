@@ -75,7 +75,7 @@ specialCharMap = {
     "hash": "#",
     "dollar": "$",
     "percent": "%",
-    "and": "&",
+    "amp": "&",
     "slash": "/",
     "(equals|equal)": "=",
     "plus": "+",
