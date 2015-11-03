@@ -63,7 +63,7 @@ specialCharMap = {
     "(bar|vertical bar|pipe)": "|",
     "(dash|minus|hyphen)": "-",
     "(dot|period)": ".",
-    "comma": ",",
+    "(commie|comma)": ",",
     "backslash": "\\",
     "underscore": "_",
     "(star|asterisk)": "*",
