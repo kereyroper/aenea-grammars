@@ -416,6 +416,7 @@ grammarCfg.cmd.map = Item(
         "(dash|hyphen|minus) [<n>]": Key("hyphen/2:%(n)d"),
         "underscore [<n>]": Key("underscore/2:%(n)d"),
         "<letters>": Text("%(letters)s"),
+        "<numbers>": Text("%(numbers)s"),
         "<char>": Text("%(char)s"),
         # Format dictated words. See the formatMap for all available types.
         # Ex: "camel case my new variable" -> "myNewVariable"
@@ -454,6 +455,7 @@ class KeystrokeRule(MappingRule):
         Choice("modifier1", modifierMap),
         Choice("modifier2", modifierMap),
         Choice("modifierSingle", singleModifierMap),
+        Choice("numbers", numberMap),
         Choice("pressKey", pressKeyMap),
         Choice("formatType", formatMap),
         Choice("abbreviation", abbreviationMap),
