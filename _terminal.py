@@ -9,6 +9,7 @@
 
 import aenea
 import aenea.configuration
+from aenea import Dictation, IntegerRef
 from aenea.lax import Key, Text
 import dragonfly
 try:
