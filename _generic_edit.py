@@ -154,7 +154,7 @@ controlKeyMap = {
     "end": "end",
     "space": "space",
     "(enter|return)": "enter",
-    "escape": "escape",
+    "(cancel|escape)": "escape",
     "tab": "tab"
 }
 
@@ -433,7 +433,7 @@ grammarCfg.cmd.map = Item(
         "(delete|remove) (double|extra) (space|whitespace)": Key("c-left/3, backspace, c-right/3"),  # @IgnorePep8
         "(delete|remove) (double|extra) (type|char|character)": Key("c-left/3, del, c-right/3"),  # @IgnorePep8
         # Microphone sleep/cancel started dictation.
-        "[<text>] (go to sleep|cancel and sleep) [<text2>]": Function(cancel_and_sleep),  # @IgnorePep8
+        "[<text>] go to sleep [<text2>]": Function(cancel_and_sleep),  # @IgnorePep8
     },
     namespace={
         "Key": Key,
