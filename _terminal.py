@@ -9,6 +9,7 @@
 
 import aenea
 import aenea.configuration
+from aenea import Dictation, IntegerRef
 from aenea.lax import Key, Text
 import dragonfly
 try:
@@ -30,8 +31,8 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer into': Text("cd "),
 
     '(terminal|term) clear': Text("clear") + Key("enter"),
-    '(terminal|term) left': Key("w-lbrace"),
-    '(terminal|term) right': Key("w-rbrace"),
+    '(terminal|term) left [<n>]': Key("w-lbrace:%(n)d"),
+    '(terminal|term) right [<n>]': Key("w-rbrace:%(n)d"),
     '(terminal|term) new [tab]': Key("w-t"),
     '(terminal|term) exit': Key("c-d"),
     '(terminal|term) close': Key("w-w"),
@@ -45,7 +46,13 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
 
 class Mapping(dragonfly.MappingRule):
     mapping = terminal_mapping
-    extras = []
+    extras = [
+        Dictation('text'),
+        IntegerRef('n', 1, 999),
+    ]
+    defaults = {
+        "n": 1,
+    }
 
 grammar.add_rule(Mapping())
 grammar.load()
