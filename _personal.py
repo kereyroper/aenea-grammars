@@ -15,7 +15,7 @@ import dragonfly
 from config import get_configuration
 
 vim_context = aenea.ProxyPlatformContext('linux')
-generic_grammar = dragonfly.Grammar('generic', context=vim_context)
+grammar = dragonfly.Grammar('generic', context=vim_context)
 config = get_configuration()
 
 commands = {}
@@ -35,8 +35,8 @@ class Mapping(dragonfly.MappingRule):
     mapping = aenea.configuration.make_grammar_commands('personal', commands)
     extras = []
 
-generic_grammar.add_rule(Mapping())
-generic_grammar.load()
+grammar.add_rule(Mapping())
+grammar.load()
 
 
 def unload():
