@@ -29,6 +29,11 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer list details': Text("ls -lh") + Key("enter"),
     'deer into': Text("cd "),
 
+    "(cat|concatenate)": Text("cat "),
+    "less": Text("less "),
+    "(tail|tell)": Text("tail "),  # apparently Dragon thinks I'm a Southerner
+    "tail follow": Text("tail -f "),
+
     '(terminal|term) clear': Text("clear") + Key("enter"),
     '(terminal|term) left': Key("c-pgup"),
     '(terminal|term) right': Key("c-pgdown"),
