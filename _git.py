@@ -43,6 +43,8 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git interactive rebase': Text("git rebase -i "),
     'git rebase interactive': Text("git rebase -i "),
     'git rebase': Text("git rebase "),
+    'git revert': Text("git revert "),
+    'git show': Text("git show "),
     'git push to': Text("git push"),
 
     # SVN Commands
