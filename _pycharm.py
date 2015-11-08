@@ -31,6 +31,8 @@ basics_mapping = aenea.configuration.make_grammar_commands('pycharm', {
     'file right [<n>]': Key('c-pgdown:%(n)d'),
     'follow': Key("w-b"),
     'forward': Key('aw-right'),
+    'open class': Key('w-o'),
+    'open file': Key('sw-o'),
     'refs': Key('a-f7'),
     })
 
