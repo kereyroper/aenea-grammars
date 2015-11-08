@@ -39,6 +39,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
 
     # Incomplete Commands
     'git add': Text("git add "),
+    'git blame': Text("git blame "),
     'git checkout': Text("git checkout "),
     'git cherry pick': Text("git cherry-pick "),
     'git interactive rebase': Text("git rebase -i "),
