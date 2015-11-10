@@ -37,6 +37,7 @@ python_mapping = aenea.configuration.make_grammar_commands('python', {
     'new private (function|func) [named] <text>': Function(create_private_function),
     'close (function|func)': Text("):\n"),
     'comment': Key("escape, i") + Text("# "),
+    '(doc|documentation) string': Text('""""""') + Key("left:3"),
 
     # Python
     "true": Text("True"),
