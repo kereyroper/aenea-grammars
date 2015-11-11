@@ -9,7 +9,7 @@
 
 import aenea
 import aenea.configuration
-from aenea.lax import Key
+from aenea.lax import Key, Text
 from aenea import IntegerRef
 import dragonfly
 
@@ -20,7 +20,9 @@ screen_mapping = aenea.configuration.make_grammar_commands('screen', {
     'screen (right|next)': Key("c-a, n"),
     'screen (left|previous)': Key("c-a, p"),
     'screen create': Key("c-a, c"),
+    'screen detach': Key("c-a, d"),
     'screen <n>': Key("c-a, %(n)d"),
+    'screen reattach': Text("screen -x") + Key("enter"),
     'screen rename': Key("c-a, s-a"),
     'screen exit': Key("c-a, backslash"),
 
