@@ -13,7 +13,7 @@ from aenea.lax import Key
 from aenea import IntegerRef
 import dragonfly
 
-screen_context = aenea.ProxyPlatformContext('linux')
+screen_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('screen', context=screen_context)
 
 screen_mapping = aenea.configuration.make_grammar_commands('screen', {
