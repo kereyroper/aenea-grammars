@@ -31,7 +31,6 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git status': Text("git status") + Key("enter"),
     'git stat': Text("git show --stat") + Key("enter"),
     'git log': Text("git log") + Key("enter"),
-    'git push': Text("git push") + Key("enter"),
     'git diff': Text("git diff "),
     'git diff current': Text("git diff") + Key("enter"),
     'git diff (cashed|cached)': Text("git diff --cached") + Key("enter"),
@@ -54,7 +53,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git show': Text("git show "),
     'git stash': Text("git stash") + Key("enter"),
     'git stash pop': Text("git stash pop") + Key("enter"),
-    'git push to': Text("git push"),
+    'git push': Text("git push "),
 
     # SVN Commands
     'git trunk': Text("git checkout trunk-svn") + Key("enter"),
