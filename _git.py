@@ -31,6 +31,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git status': Text("git status") + Key("enter"),
     'git stat': Text("git show --stat") + Key("enter"),
     'git log': Text("git log") + Key("enter"),
+    'git ref log': Text("git reflog") + Key("enter"),
     'git diff': Text("git diff "),
     'git diff current': Text("git diff") + Key("enter"),
     'git diff (cashed|cached)': Text("git diff --cached") + Key("enter"),
