@@ -56,12 +56,12 @@ basics_mapping = aenea.configuration.make_grammar_commands('vim', {
     'vim': Text("vim"),
 
     # Moving between splits
-    'split-left': Key("escape, c-h"),
-    'split-left <n>': Key("escape, c-h:%(n)d"),
-    'split-right': Key("escape, c-l"),
-    'split-right <n>': Key("escape, c-l:%(n)d"),
-    'split-up': Key("escape, c-k"),
-    'split-down': Key("escape, c-j"),
+    'split-left': Key("escape, c-w, h"),
+    # 'split-left <n>': Key("escape, c-h:%(n)d"),
+    'split-right': Key("escape, c-w, l"),
+    # 'split-right <n>': Key("escape, c-l:%(n)d"),
+    'split-up': Key("escape, c-w, k"),
+    'split-down': Key("escape, c-w, j"),
     'split-close': Key("escape, colon, q, enter"),
     'open [in] split': Key("s"),
     'open [in] tab': Key("t"),
