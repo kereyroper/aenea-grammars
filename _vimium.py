@@ -46,6 +46,9 @@ window_mapping = {
     'find <text>': Key("escape, slash") + Text("%(text)s") + Key("enter"),
     'next': Key("n"),
     'prev|previous': Key("N"),
+
+    # Debugger
+    'continue': Key("f8"),
 }
 
 gmail_mapping = {
