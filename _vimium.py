@@ -49,6 +49,9 @@ window_mapping = {
 
     # Debugger
     'continue': Key("f8"),
+    'over': Key("f10"),
+    'step into': Key("f11"),
+    'step out': Key("s-f11"),
 }
 
 gmail_mapping = {
