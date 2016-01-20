@@ -22,7 +22,7 @@ import dragonfly
 from _generic_edit import pressKeyMap
 
 pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
-grammar = dragonfly.Grammar('generic', context=pycharm_context)
+grammar = dragonfly.Grammar('pycharm', context=pycharm_context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('pycharm', {
     'back': Key('aw-left'),
