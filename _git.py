@@ -52,6 +52,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git rebase interactive': Text("git rebase -i "),
     'git rebase': Text("git rebase "),
     'git rebase upstream': Text("git rebase upstream/master") + Key("enter"),
+    'git remote add': Text("git remote add "),
     'git reset': Text("git reset "),
     'git revert': Text("git revert "),
     'git show': Text("git show "),
