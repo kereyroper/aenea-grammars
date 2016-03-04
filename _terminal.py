@@ -23,12 +23,18 @@ grammar = dragonfly.Grammar('terminal', context=terminal_context)
 
 terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     # Terminal commands
+    "background": Key("c-z"),
+    "cancel": Key("c-c"),
+
     # dir is hard to say and recognize. Use something else
     'deer up': Text("cd ..") + Key("enter"),
     'deer list': Text("ls") + Key("enter"),
     'deer list all': Text("ls -lha") + Key("enter"),
     'deer list details': Text("ls -lh") + Key("enter"),
     'deer into': Text("cd "),
+
+    "foreground": Text("fg") + Key("enter"),
+    "recent": Key("c-r"),
 
     "shell connect": Text("ssh "),
     "shell disconnect": Key("enter") + Key("tilde") + Key("dot"),
