@@ -30,6 +30,9 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer list details': Text("ls -lh") + Key("enter"),
     'deer into': Text("cd "),
 
+    "shell connect": Text("ssh "),
+    "shell disconnect": Key("enter") + Key("tilde") + Key("dot"),
+
     "(cat|concatenate)": Text("cat "),
     "less": Text("less "),
     "(tail|tell)": Text("tail "),  # apparently Dragon thinks I'm a Southerner
