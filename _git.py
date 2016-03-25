@@ -19,6 +19,7 @@ grammar = dragonfly.Grammar('git', context=git_context)
 git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git': Text("git"),
 
+    'git add patch': Text("git add -p") + Key("enter"),
     'git amend': Text("git commit --amend") + Key("enter"),
     'git commit': Text("git commit") + Key("enter"),
     'git commit amend': Text("git commit --amend") + Key("enter"),
