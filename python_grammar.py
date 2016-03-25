@@ -58,6 +58,7 @@ python_mapping = aenea.configuration.make_grammar_commands('python', {
     "self dot": Text("self."),
     "iter items": Text(".iteritems("),
     "string join": Key("apostrophe, right")+Text(".join("),
+    "debugger": Text("import ipdb; ipdb.set_trace()"),
     "dunder": Text("__"),
     "dunder main": Text("__main__"),
     "dunder init": Text("__init__(self"),
