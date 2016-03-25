@@ -37,6 +37,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git diff current': Text("git diff") + Key("enter"),
     'git diff (cashed|cached)': Text("git diff --cached") + Key("enter"),
     'git diff upstream': Text("git diff upstream/master") + Key("enter"),
+    'git rebase continue': Text("git rebase --continue") + Key("enter"),
 
     # https://github.com/tgrosinger/dotfiles/blob/master/.gitconfig#L15
     'git hist': Text("git hist") + Key("enter"),
