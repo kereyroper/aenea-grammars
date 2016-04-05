@@ -30,7 +30,6 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer into': Text("cd "),
 
     "(cat|concatenate)": Text("cat "),
-    "less": Text("less "),
     "(tail|tell)": Text("tail "),  # apparently Dragon thinks I'm a Southerner
     "tail follow": Text("tail -f "),
 
