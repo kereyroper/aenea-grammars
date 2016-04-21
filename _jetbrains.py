@@ -1,7 +1,7 @@
 # Created for aenea using libraries from the Dictation Toolbox
 # https://github.com/dictation-toolbox/dragonfly-scripts
 #
-# Commands for interacting with PyCharm
+# Commands for interacting with JetBrains IDEs, such as PyCharm
 # Other commands are covered by using Vim emulation
 #
 # Author: Kerey Roper
@@ -21,10 +21,10 @@ import dragonfly
 
 from _generic_edit import pressKeyMap
 
-pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
-grammar = dragonfly.Grammar('pycharm', context=pycharm_context)
+jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?i)(pycharm|rubymine)'})
+grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 
-basics_mapping = aenea.configuration.make_grammar_commands('pycharm', {
+basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'back': Key('aw-left'),
     'file close': Key('w-w'),
     'file left [<n>]': Key('c-pgup:%(n)d'),
