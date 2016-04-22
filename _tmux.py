@@ -13,7 +13,7 @@ from aenea.lax import Key
 from aenea import IntegerRef
 import dragonfly
 
-tmux_context = aenea.ProxyPlatformContext('linux')
+tmux_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('tmux', context=tmux_context)
 
 tmux_mapping = aenea.configuration.make_grammar_commands('tmux', {
