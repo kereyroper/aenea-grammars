@@ -34,6 +34,7 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'forward': Key('aw-right'),
     'import': Key('a-enter'),
     'open class': Key('w-o'),
+    'test debug': Key('acw-d'),
     'test run': Key('cw-r'),
     'refs': Key('a-f7'),
     })
