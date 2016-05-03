@@ -19,7 +19,7 @@ grammar = dragonfly.Grammar('tmux', context=tmux_context)
 tmux_mapping = aenea.configuration.make_grammar_commands('tmux', {
     'team (right|next)': Key("c-b, n"),
     'team (left|previous)': Key("c-b, p"),
-    'team create': Key("c-b, c"),
+    'team (create|new)': Key("c-b, c"),
     'team <n>': Key("c-b, %(n)d"),
     'team rename': Key("c-b, comma"),
     'team exit': Key("c-b, backslash"),
