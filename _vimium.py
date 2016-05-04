@@ -47,11 +47,15 @@ window_mapping = {
     'next': Key("n"),
     'prev|previous': Key("N"),
 
+    # Stuff below here is general Chrome, not Vimium specific
     # Debugger
     'continue': Key("f8"),
     'over': Key("f10"),
     'step into': Key("f11"),
     'step out': Key("s-f11"),
+
+    # Tab to window extension
+    'page detach': Key("as-x"),
 }
 
 gmail_mapping = {
