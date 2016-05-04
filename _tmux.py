@@ -10,6 +10,8 @@
 import aenea
 import aenea.configuration
 from aenea.lax import Key
+from aenea.wrappers import Repeat
+#from aenea.wrappers import ActionRepetition, Repeat
 from aenea import IntegerRef
 import dragonfly
 
@@ -17,8 +19,9 @@ tmux_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('tmux', context=tmux_context)
 
 tmux_mapping = aenea.configuration.make_grammar_commands('tmux', {
-    'team (right|next)': Key("c-b, n"),
-    'team (left|previous)': Key("c-b, p"),
+    'team (right|next) [<n>]': Key("c-b, n:%(n)d"),
+    'team (left|previous) [<n>]': Key("c-b, p:%(n)d"),
+    #'team test [<n>]': ActionRepetition(Key("b:%(n)d, d:%(n)d"), Repeat(extra="%(n)d"),
     'team (create|new)': Key("c-b, c"),
     'team <n>': Key("c-b, %(n)d"),
     'team rename': Key("c-b, comma"),
@@ -39,8 +42,11 @@ tmux_mapping = aenea.configuration.make_grammar_commands('tmux', {
 class Mapping(dragonfly.MappingRule):
     mapping = tmux_mapping
     extras = [
-        IntegerRef('n', 0, 10)
+        IntegerRef('n', 1, 99)
     ]
+    defaults = {
+        "n": 1,
+    }
 
 grammar.add_rule(Mapping())
 grammar.load()
