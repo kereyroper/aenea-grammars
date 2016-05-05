@@ -20,24 +20,26 @@ import dragonfly
 
 
 def create_class(text):
-    Text('class %s():\n    ' % format_pascal_case(text)).execute()
+    Text('class %s' % format_pascal_case(text)).execute()
+    Key('left').execute()
 
 
-def create_private_function(text):
-    Text('def _%s(' % format_snake_case(text)).execute()
+def create_module(text):
+    Text('module %s' % format_pascal_case(text)).execute()
+    Key('left').execute()
 
 
 def create_public_function(text):
-    Text('def %s(' % format_snake_case(text)).execute()
+    Text('def %s()' % format_snake_case(text)).execute()
+    Key('left').execute()
 
 
 ruby_mapping = aenea.configuration.make_grammar_commands('ruby', {
     'new class [named] <text>': Function(create_class),
+    'new module [named] <text>': Function(create_module),
     'new [public] (function|func) [named] <text>': Function(create_public_function),
-    'new private (function|func) [named] <text>': Function(create_private_function),
-    'close (function|func)': Text("):\n"),
     'comment': Key("escape, i") + Text("# "),
-    '(doc|documentation) string': Text('""""""') + Key("left:3"),
+    '(our dock|(doc|documentation) string)': Text('##') + Key('enter'),
 
     # ruby
     "true": Text("true"),
