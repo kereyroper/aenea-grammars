@@ -16,18 +16,21 @@ import dragonfly
 # Languages
 import go_grammar
 import python_grammar
+import ruby_grammar
 import sql_grammar
 
 
 pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
+rubymine_context = aenea.ProxyCustomAppContext(query={'id': 'rubymine'})
 vim_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'vim'})
 ssh_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'ssh'})
-context = (pycharm_context | vim_context | ssh_context)
+context = (pycharm_context | rubymine_context | vim_context | ssh_context)
 generic_grammar = dragonfly.Grammar('generic', context=context)
 
 language_map = {
     "(go|gopher)": go_grammar.get_grammar(context),
     "python":      python_grammar.get_grammar(context),
+    "ruby":        ruby_grammar.get_grammar(context),
     "sql":         sql_grammar.get_grammar(context),
 }
 
