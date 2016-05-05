@@ -39,6 +39,8 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'pain files': Key('w-1'),
     'pain results': Key('w-3'),
     'pain test': Key('w-4'),
+    'split move': Key('cw-y'),
+    'split new': Key('cw-t'),
     'test debug': Key('acw-d'),
     'test run': Key('cw-r'),
     'refs': Key('a-f7'),
