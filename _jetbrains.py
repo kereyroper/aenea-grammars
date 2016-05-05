@@ -26,7 +26,7 @@ grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'back': Key('aw-left'),
-    'file close': Key('w-w'),
+    '(file|pain) close': Key('w-w'),
     'file left [<n>]': Key('c-pgup:%(n)d'),
     '(file open|open file)': Key('sw-o'),
     'file right [<n>]': Key('c-pgdown:%(n)d'),
