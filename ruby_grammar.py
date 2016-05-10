@@ -39,7 +39,7 @@ ruby_mapping = aenea.configuration.make_grammar_commands('ruby', {
     'new module [named] <text>': Function(create_module),
     'new [public] (function|func) [named] <text>': Function(create_public_function),
     'comment': Key("escape, i") + Text("# "),
-    '(our dock|(doc|documentation) string)': Text('##') + Key('enter'),
+    '(ruby dock|(doc|documentation) string)': Text('##') + Key('enter'),
 
     # ruby
     "true": Text("true"),
