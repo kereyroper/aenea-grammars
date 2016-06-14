@@ -36,6 +36,8 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     "foreground": Text("fg") + Key("enter"),
     "recent": Key("c-r"),
 
+    "grep Perl": Text("grep -P"),
+
     "shell connect": Text("ssh "),
     "shell disconnect": Key("enter") + Key("tilde") + Key("dot"),
 
