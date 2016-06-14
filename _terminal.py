@@ -41,6 +41,8 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     "shell connect": Text("ssh "),
     "shell disconnect": Key("enter") + Key("tilde") + Key("dot"),
 
+    "some": Text("paste -sd+ - | bc"),
+
     "(cat|concatenate)": Text("cat "),
     "less": Text("less "),
     "(tail|tell)": Text("tail "),  # apparently Dragon thinks I'm a Southerner
