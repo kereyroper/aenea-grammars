@@ -61,6 +61,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     '(apt|app) get install': Text("sudo apt-get install "),
 
     # Rails
+    'test coverage': Text("rake simplecov") + Key("enter"),
     'test run': Text("rake test") + Key("enter"),
 })
 
