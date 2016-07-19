@@ -25,6 +25,8 @@ tmux_mapping = aenea.configuration.make_grammar_commands('tmux', {
     'team (create|new)': Key("c-b, c"),
     'team <n>': Key("c-b, %(n)d"),
     'team rename': Key("c-b, comma"),
+    'team scroll back': Key("c-b, lbracket"),
+    'team switch': Key("c-b, w"),
     'team exit': Key("c-b, backslash"),
     'team detach': Key("c-b, d"),
 
