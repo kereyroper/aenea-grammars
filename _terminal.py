@@ -62,6 +62,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
 
     # Rails
     'bundle install': Text("bundle install") + Key("enter"),
+    'bundle update': Text("bundle update") + Key("enter"),
     'rails console': Text("rails console") + Key("enter"),
     '[rails] migrate': Text("rake db:migrate"),
     '[rails] migrate rollback': Text("rake db:rollback"),
