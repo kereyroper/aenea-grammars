@@ -62,6 +62,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git stash': Text("git stash") + Key("enter"),
     'git stash pop': Text("git stash pop") + Key("enter"),
     'git push': Text("git push "),
+    'git push origin': Text("git push origin "),
 
     # SVN Commands
     'git trunk': Text("git checkout trunk-svn") + Key("enter"),
