@@ -60,6 +60,10 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     '(apt|app) get': Text("sudo apt-get "),
     '(apt|app) get install': Text("sudo apt-get install "),
 
+    # Postgres
+    'post development': Text("psql kww_development") + Key("enter"),
+    'post test': Text("psql kww_test") + Key("enter"),
+
     # Rails
     'bundle install': Text("bundle install") + Key("enter"),
     'bundle update': Text("bundle update") + Key("enter"),
