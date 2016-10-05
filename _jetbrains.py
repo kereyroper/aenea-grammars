@@ -25,6 +25,7 @@ jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?
 grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
+    'action': Key('sw-a'),
     'back': Key('aw-left'),
     'debug (continue|run)': Key('aw-r'),
     '(file|pain) close': Key('w-w'),
