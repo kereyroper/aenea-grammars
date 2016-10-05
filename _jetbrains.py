@@ -21,7 +21,7 @@ import dragonfly
 
 from _generic_edit import pressKeyMap
 
-jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?i)(pycharm|rubymine)'})
+jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?i)((android)?.*studio|pycharm|rubymine)'})
 grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
