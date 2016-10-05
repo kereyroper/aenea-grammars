@@ -53,6 +53,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git clone': Text("git clone "),
     'git interactive rebase': Text("git rebase -i "),
     'git rebase interactive': Text("git rebase -i "),
+    'git rebase interactive upstream': Text("git rebase -i upstream/master") + Key("enter"),
     'git rebase': Text("git rebase "),
     'git rebase upstream': Text("git rebase upstream/master") + Key("enter"),
     'git remote add': Text("git remote add "),
