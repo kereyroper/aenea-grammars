@@ -27,6 +27,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     "cancel": Key("c-c"),
 
     # dir is hard to say and recognize. Use something else
+    'deer back': Text("cd -") + Key("enter"),
     'deer up': Text("cd ..") + Key("enter"),
     'deer list': Text("ls") + Key("enter"),
     'deer list all': Text("ls -lha") + Key("enter"),
