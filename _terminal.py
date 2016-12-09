@@ -68,6 +68,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     # Rails
     'bundle install': Text("bundle install") + Key("enter"),
     'bundle update': Text("bundle update") + Key("enter"),
+    'hub (builds|packages)': Text('eatsa-deploy packages -a hub -l 5') + Key("enter"),
     'hub deploy prod': Text('eatsa-deploy -e prod deploy -a hub -s half'),
     'hub deploy stage': Text('eatsa-deploy -e stage deploy -a hub -s all'),
     'hub list prod': Text('eatsa-deploy -e prod deploy -a hub -r') + Key("enter"),
