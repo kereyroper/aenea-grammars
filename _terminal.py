@@ -87,6 +87,9 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     '[rails] migrate rollback': Text("rake db:rollback"),
     'test coverage': Text("rake simplecov") + Key("enter"),
     'test run': Text("rake test") + Key("enter"),
+
+    # Python
+    'serverless deploy': Text('sls deploy'),
 })
 
 
