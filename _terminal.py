@@ -90,6 +90,8 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
 
     # Python
     'serverless deploy': Text('sls deploy'),
+    'virtual environment activate': Text('source venv/bin/activate') + Key("enter"),
+    'virtual environment deactivate': Text('deactivate') + Key("enter"),
 })
 
 
