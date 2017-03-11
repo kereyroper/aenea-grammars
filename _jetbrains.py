@@ -28,6 +28,8 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'action': Key('sw-a'),
     'back': Key('aw-left'),
     'debug (continue|run)': Key('aw-r'),
+    'debug (next|over)': Key('f8'),
+    'debug (step|into)': Key('f7'),
     '(file|pain) close': Key('w-w'),
     'file left [<n>]': Key('c-pgup:%(n)d'),
     '(file open|open file)': Key('sw-o'),
