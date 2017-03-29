@@ -73,7 +73,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'hub (config|configure) (prod|production)': Text('eatsa-deploy -e prod config -e hub/common-config.yaml'),
     'hub (config|configure) (stage|staging)': Text('eatsa-deploy -e stage config -e hub/common-config.yaml'),
     'hub deploy (int|integration)': Text('eatsa-deploy -e int deploy -a hub -s all'),
-    'hub deploy (prod|production)': Text('eatsa-deploy -e prod deploy -a hub -s half'),
+    'hub deploy (prod|production)': Text('eatsa-deploy -e prod deploy -a hub -s one'),
     'hub deploy (stage|staging)': Text('eatsa-deploy -e stage deploy -a hub -s all'),
     'hub list (int|integration)': Text('eatsa-deploy -e int deploy -a hub -r') + Key("enter"),
     'hub list (prod|production)': Text('eatsa-deploy -e prod deploy -a hub -r') + Key("enter"),
