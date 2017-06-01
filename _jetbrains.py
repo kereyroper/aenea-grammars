@@ -40,7 +40,7 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'import': Key('a-enter'),
     'open class': Key('w-o'),
     'rename': Key('s-f6'),
-    'pain code': Key('ctrl:down') + Key('tab/8') + Key('s-tab') + Key('ctrl:up'),
+    'pain code': Key('ctrl:down') + Key('tab/30') + Key('s-tab') + Key('ctrl:up'),
     'pain debug': Key('w-5'),
     'pain files': Key('w-1'),
     'pain (search|results)': Key('w-3'),
