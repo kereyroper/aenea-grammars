@@ -23,7 +23,7 @@ grammar = dragonfly.Grammar('terminal', context=terminal_context)
 
 terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     # Terminal commands
-    "background": Key("c-z"),
+    "background": Text("bg") + Key("enter"),
     "cancel": Key("c-c"),
 
     # dir is hard to say and recognize. Use something else
@@ -46,6 +46,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
 
     "(cat|concatenate)": Text("cat "),
     "less": Text("less "),
+    "suspend": Key("c-z"),
     "(tail|tell)": Text("tail "),  # apparently Dragon thinks I'm a Southerner
     "tail follow": Text("tail -f "),
 
