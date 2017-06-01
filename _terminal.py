@@ -97,6 +97,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'hub shell (int|integration)': Text('eatsa-deploy -e int connect hub-shell') + Key("enter"),
     'hub shell (prod|production)': Text('eatsa-deploy -e prod connect hub-shell') + Key("enter"),
     'hub shell (stage|staging)': Text('eatsa-deploy -e stage connect hub-shell') + Key("enter"),
+    'Python test [run]': Text("pytest") + Key("enter"),
     'rails console': Text("rails console") + Key("enter"),
     '[rails] (migrate|migration) create': Text('rails generate migration '),
     '[rails] migrate': Text("rake db:migrate"),
