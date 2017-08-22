@@ -49,6 +49,7 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'split new': Key('cw-t'),
     'test debug': Key('acw-d'),
     'test run': Key('cw-r'),
+    'test run current': Key('cs-r'),
     'refs': Key('a-f7'),
     })
 
