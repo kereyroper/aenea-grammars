@@ -105,6 +105,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     '[rails] migrate': Text("rake db:migrate"),
     '[rails] (migrate|migration) rollback': Text("rake db:rollback"),
     '[rails] migrate test': Text("rake db:migrate RAILS_ENV=test"),
+    '[rails] (migrate|migration) rollback test': Text("rake db:rollback RAILS_ENV=test"),
     'router (builds|packages)': Text('eatsa-deploy packages -a router -l 5') + Key("enter"),
     'router (config|configure) (int|integration)': Text('eatsa-deploy -e int config -e router/common-config.yaml'),
     'router (config|configure) (prod|production)': Text('eatsa-deploy -e prod config -e router/common-config.yaml'),
