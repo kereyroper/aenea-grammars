@@ -20,11 +20,12 @@ import ruby_grammar
 import sql_grammar
 
 
+chrome_context = aenea.ProxyCustomAppContext(query={'id': 'chrome'})
 pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
 rubymine_context = aenea.ProxyCustomAppContext(query={'id': 'rubymine'})
 vim_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'vim'})
 ssh_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'ssh'})
-context = (pycharm_context | rubymine_context | vim_context | ssh_context)
+context = (chrome_context | pycharm_context | rubymine_context | vim_context | ssh_context)
 generic_grammar = dragonfly.Grammar('generic', context=context)
 
 language_map = {
