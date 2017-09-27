@@ -14,6 +14,7 @@ grammar = dragonfly.Grammar('darwin_general', context=context)
 
 class Mapping(dragonfly.MappingRule):
     mapping = {
+        'screenshot': Key("csw-4"),
         'select': Key("win:up"),
         'spotlight': Key("w-space"),
         'task': Key("win:down") + Key("tab"),
