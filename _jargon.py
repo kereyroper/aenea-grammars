@@ -22,6 +22,7 @@ context = aenea.ProxyPlatformContext('darwin')
 grammar = dragonfly.Grammar('jargon', context=context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jargon', {
+    'H (base|space)': Text('HBase'),
     })
 
 
