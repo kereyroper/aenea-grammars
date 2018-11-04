@@ -14,9 +14,12 @@ from aenea import Choice
 import dragonfly
 from config import get_configuration
 
-vim_context = aenea.ProxyPlatformContext('linux')
-grammar = dragonfly.Grammar('generic', context=vim_context)
 config = get_configuration()
+if config.get('os') == 'linux':
+    context = aenea.ProxyPlatformContext('linux')
+else:
+    context = aenea.ProxyPlatformContext('darwin')
+grammar = dragonfly.Grammar('generic', context=context)
 
 commands = {}
 if "full-name" in config:

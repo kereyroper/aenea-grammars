@@ -12,13 +12,19 @@ import aenea.configuration
 from aenea import Dictation, IntegerRef
 from aenea.lax import Key, Text
 import dragonfly
+from config import get_configuration
+
+config = get_configuration()
 try:
     import aenea.communications
 except ImportError:
     print 'Unable to import Aenea client-side modules.'
     raise
 
-terminal_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
+if config.get('os') == 'linux':
+    terminal_context = aenea.ProxyCustomAppContext(query={'executable': 'terminal'})
+else:
+    terminal_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('terminal', context=terminal_context)
 
 terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {

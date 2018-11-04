@@ -20,8 +20,14 @@ from aenea import (
 import dragonfly
 
 from _generic_edit import pressKeyMap
+from config import get_configuration
 
-jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?i)((android)?.*studio|pycharm|rubymine)'})
+config = get_configuration()
+
+if config.get('os') == 'linux':
+    jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'executable': r'(?i)((android)?.*studio|pycharm|rubymine)'})
+else:
+    jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?i)((android)?.*studio|pycharm|rubymine)'})
 grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {

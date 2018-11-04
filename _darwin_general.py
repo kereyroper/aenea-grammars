@@ -7,6 +7,9 @@ import aenea.configuration
 from aenea import IntegerRef
 from aenea.lax import Key
 import dragonfly
+from config import get_configuration
+
+config = get_configuration()
 
 context = aenea.ProxyPlatformContext('darwin')
 grammar = dragonfly.Grammar('darwin_general', context=context)
@@ -25,7 +28,8 @@ class Mapping(dragonfly.MappingRule):
 
 
 grammar.add_rule(Mapping())
-grammar.load()
+if config.get('os') == 'darwin':
+    grammar.load()
 
 
 def unload():

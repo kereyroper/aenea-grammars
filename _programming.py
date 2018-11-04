@@ -12,6 +12,8 @@ import aenea.configuration
 from aenea.lax import Function, Text
 from aenea import Choice
 import dragonfly
+from config import get_configuration
+
 
 # Languages
 import go_grammar
@@ -20,10 +22,17 @@ import ruby_grammar
 import sql_grammar
 
 
-pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
-rubymine_context = aenea.ProxyCustomAppContext(query={'id': 'rubymine'})
-vim_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'vim'})
-ssh_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'ssh'})
+config = get_configuration()
+if config.get('os') == 'linux':
+    pycharm_context = aenea.ProxyCustomAppContext(query={'executable': 'pycharm'})
+    rubymine_context = aenea.ProxyCustomAppContext(query={'executable': 'rubymine'})
+    vim_context = aenea.ProxyCustomAppContext(query={'executable': 'terminal', 'title': 'vim'})
+    ssh_context = aenea.ProxyCustomAppContext(query={'executable': 'terminal', 'title': 'ssh'})
+else:
+    pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
+    rubymine_context = aenea.ProxyCustomAppContext(query={'id': 'rubymine'})
+    vim_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'vim'})
+    ssh_context = aenea.ProxyCustomAppContext(query={'id': 'Terminal', 'title': 'ssh'})
 context = (pycharm_context | rubymine_context | vim_context | ssh_context)
 generic_grammar = dragonfly.Grammar('generic', context=context)
 

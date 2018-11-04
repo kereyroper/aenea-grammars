@@ -19,10 +19,19 @@ from aenea import (
 import dragonfly
 
 from _generic_edit import pressKeyMap
+from config import get_configuration
 
-pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
-rubymine_context = aenea.ProxyCustomAppContext(query={'id': 'rubymine'})
-vim_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
+config = get_configuration()
+
+
+if config.get('os') == 'linux':
+    pycharm_context = aenea.ProxyCustomAppContext(query={'executable': 'pycharm'})
+    rubymine_context = aenea.ProxyCustomAppContext(query={'executable': 'rubymine'})
+    vim_context = aenea.ProxyCustomAppContext(query={'executable': 'terminal'})
+else:
+    pycharm_context = aenea.ProxyCustomAppContext(query={'id': 'pycharm'})
+    rubymine_context = aenea.ProxyCustomAppContext(query={'id': 'rubymine'})
+    vim_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('generic', context=(pycharm_context | rubymine_context | vim_context))
 
 surroundCharsMap = {

@@ -12,6 +12,9 @@ from aenea import (
     Key,
     Text,
 )
+from config import get_configuration
+
+config = get_configuration()
 
 slack_config = Config("Slack")
 slack_config.usernames = Section("Username Mappings")
@@ -51,9 +54,11 @@ class ChatRule(MappingRule):
     ]
 
 
-# nixContext = NixAppContext(executable="slack")
 # winContext = AppContext(executable="slack")
-context = aenea.ProxyCustomAppContext(query={'id': 'slack'})
+if config.get('os') == 'linux':
+    context = aenea.ProxyCustomAppContext(executable="slack")
+else:
+    context = aenea.ProxyCustomAppContext(query={'id': 'slack'})
 
 grammar = Grammar("slack_general", context=context)
 grammar.add_rule(NavigationRule())

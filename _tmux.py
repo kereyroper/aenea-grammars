@@ -14,8 +14,14 @@ from aenea.wrappers import Repeat
 #from aenea.wrappers import ActionRepetition, Repeat
 from aenea import IntegerRef
 import dragonfly
+from config import get_configuration
 
-tmux_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
+config = get_configuration()
+
+if config.get('os') == 'linux':
+    tmux_context = aenea.ProxyCustomAppContext(query={'executable': 'terminal'})
+else:
+    tmux_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('tmux', context=tmux_context)
 
 tmux_mapping = aenea.configuration.make_grammar_commands('tmux', {

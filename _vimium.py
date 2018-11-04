@@ -15,9 +15,15 @@ from aenea import (
     IntegerRef
 )
 import dragonfly
+from config import get_configuration
+
+config = get_configuration()
 
 
-chrome_context = aenea.ProxyCustomAppContext(query={'id': 'chrome'})
+if config.get('os') == 'linux':
+    chrome_context = aenea.ProxyAppContext(executable="chromium")
+else:
+    chrome_context = aenea.ProxyCustomAppContext(query={'id': 'chrome'})
 grammar = dragonfly.Grammar('chrome', context=chrome_context)
 
 window_mapping = {

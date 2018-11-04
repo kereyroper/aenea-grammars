@@ -6,7 +6,9 @@ import aenea
 import aenea.configuration
 from aenea.lax import Key, Text, Dictation
 import dragonfly
+from config import get_configuration
 
+config = get_configuration()
 context = aenea.ProxyPlatformContext('darwin')
 grammar = dragonfly.Grammar('shift_it', context=context)
 
@@ -24,7 +26,8 @@ class Mapping(dragonfly.MappingRule):
 
 
 grammar.add_rule(Mapping())
-grammar.load()
+if config.get('os') == 'darwin':
+    grammar.load()
 
 
 def unload():

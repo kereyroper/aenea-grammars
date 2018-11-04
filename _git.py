@@ -12,8 +12,14 @@ import aenea.configuration
 from aenea.lax import Key
 from aenea import Text
 import dragonfly
+from config import get_configuration
 
-git_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
+config = get_configuration()
+
+if config.get('os') == 'linux':
+    git_context = aenea.ProxyPlatformContext('linux')
+else:
+    git_context = aenea.ProxyCustomAppContext(query={'id': 'terminal'})
 grammar = dragonfly.Grammar('git', context=git_context)
 
 git_mapping = aenea.configuration.make_grammar_commands('git', {

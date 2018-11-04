@@ -17,8 +17,14 @@ from aenea import (
 import dragonfly
 
 from _generic_edit import pressKeyMap
+from config import get_configuration
 
-context = aenea.ProxyPlatformContext('darwin')
+config = get_configuration()
+
+if config.get('os') == 'linux':
+    context = aenea.ProxyPlatformContext('linux')
+else:
+    context = aenea.ProxyPlatformContext('darwin')
 grammar = dragonfly.Grammar('jargon', context=context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jargon', {
