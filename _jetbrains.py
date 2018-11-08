@@ -25,32 +25,34 @@ from config import get_configuration
 config = get_configuration()
 
 if config.get('os') == 'linux':
-    jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'executable': r'(?i)((android)?.*studio|pycharm|rubymine)'})
+    jetbrains_context = aenea.ProxyCustomAppContext(query={'executable': 'pycharm'})
+    mod = 'c'
 else:
     jetbrains_context = aenea.ProxyCustomAppContext(match='regex', query={'id': r'(?i)((android)?.*studio|pycharm|rubymine)'})
+    mod = 'w'
 grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 
 basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
-    'action': Key('sw-a'),
-    'back': Key('aw-left'),
-    'debug (continue|run)': Key('aw-r'),
+    'action': Key(mod + 's-a'),
+    'back': Key(mod + 'a-left'),
+    'debug (continue|run)': Key(mod + 'a-r'),
     'debug (next|over)': Key('f8'),
     'debug (step|into)': Key('f7'),
-    '(file|pain) close': Key('w-w'),
-    'file close all': Key('sw-w'),
+    '(file|pain) close': Key(mod + '-w'),
+    'file close all': Key(mod + 's-w'),
     'file left [<n>]': Key('c-pgup:%(n)d'),
-    '(file open|open file)': Key('sw-o'),
+    '(file open|open file)': Key(mod + 's-o'),
     'file right [<n>]': Key('c-pgdown:%(n)d'),
-    'follow': Key("w-b"),
-    'forward': Key('aw-right'),
+    'follow': Key(mod + "-b"),
+    'forward': Key(mod + 'a-right'),
     'import': Key('a-enter'),
-    'open class': Key('w-o'),
+    'open class': Key(mod + '-o'),
     'rename': Key('s-f6'),
     'pain code': Key('ctrl:down') + Key('tab/30') + Key('s-tab') + Key('ctrl:up'),
-    'pain debug': Key('w-5'),
-    'pain files': Key('w-1'),
-    'pain (search|results)': Key('w-3'),
-    'pain test': Key('w-4'),
+    'pain debug': Key(mod + '-5'),
+    'pain files': Key(mod + '-1'),
+    'pain (search|results)': Key(mod + '-3'),
+    'pain test': Key(mod + '-4'),
     'split move': Key('cw-y'),
     'split new': Key('cw-t'),
     'test debug': Key('acw-d'),
