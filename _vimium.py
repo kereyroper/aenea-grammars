@@ -22,18 +22,20 @@ config = get_configuration()
 
 if config.get('os') == 'linux':
     chrome_context = aenea.ProxyAppContext(executable="chromium")
+    mod = 'c'
 else:
     chrome_context = aenea.ProxyCustomAppContext(query={'id': 'chrome'})
+    mod = 'w'
 grammar = dragonfly.Grammar('chrome', context=chrome_context)
 
 window_mapping = {
     # Tab navigation
     'page (previous|left) [<n>]': Key("c-pgup:%(n)d"),
     'page (next|right) [<n>]': Key("c-pgdown:%(n)d"),
-    'page <n>': Key("w-%(n)d"),
-    'page new': Key("w-t"),
-    'page reopen': Key("ws-t"),
-    'page close': Key("w-w"),
+    'page <n>': Key(mod + "-%(n)d"),
+    'page new': Key(mod + "-t"),
+    'page reopen': Key(mod + "s-t"),
+    'page close': Key(mod + "-w"),
     'page back': Key("s-h"),
     'page forward': Key("s-l"),
     'refresh': Key("r"),
