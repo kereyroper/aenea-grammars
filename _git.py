@@ -43,6 +43,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git diff': Text("git diff "),
     'git diff current': Text("git diff") + Key("enter"),
     'git diff (cashed|cached)': Text("git diff --cached") + Key("enter"),
+    'git diff origin': Text("git diff origin/master") + Key("enter"),
     'git diff upstream': Text("git diff upstream/master") + Key("enter"),
     'git rebase continue': Text("git rebase --continue") + Key("enter"),
 
@@ -55,13 +56,16 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git branch': Text("git branch "),
     'git branch (create|new)': Text("git checkout -b "),
     'git checkout': Text("git checkout "),
+    'git checkout origin': Text("git checkout origin/master") + Key("enter"),
     'git checkout upstream': Text("git checkout upstream/master") + Key("enter"),
     'git cherry pick': Text("git cherry-pick "),
     'git clone': Text("git clone "),
     'git interactive rebase': Text("git rebase -i "),
     'git rebase interactive': Text("git rebase -i "),
+    'git rebase interactive origin': Text("git rebase -i origin/master") + Key("enter"),
     'git rebase interactive upstream': Text("git rebase -i upstream/master") + Key("enter"),
     'git rebase': Text("git rebase "),
+    'git rebase origin': Text("git rebase origin/master") + Key("enter"),
     'git rebase upstream': Text("git rebase upstream/master") + Key("enter"),
     'git remote add': Text("git remote add "),
     'git reset': Text("git reset "),
@@ -71,6 +75,7 @@ git_mapping = aenea.configuration.make_grammar_commands('git', {
     'git stash pop': Text("git stash pop") + Key("enter"),
     'git push': Text("git push "),
     'git push origin': Text("git push origin "),
+    'git push origin force': Text("git push origin -f "),
 
     # SVN Commands
     'git trunk': Text("git checkout trunk-svn") + Key("enter"),
