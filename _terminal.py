@@ -88,7 +88,10 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     # Python
     'Pip install': Text('pip install '),
     'Pip install requirements': Text('pip install -r requirements.txt') + Key("enter"),
-    'Python test [run]': Text("pytest") + Key("enter"),
+    'Python test [run] end 2 end': Text("pytest tests/e2e") + Key("enter"),
+    'Python test [run] local': Text("pytest tests/local") + Key("enter"),
+    'Python test [run] integration': Text("pytest tests/local/integration") + Key("enter"),
+    'Python test [run] [unit]': Text("pytest tests/local/unit") + Key("enter"),
     'serverless deploy': Text('sls deploy'),
     'virtual environment activate': Text('source venv/bin/activate') + Key("enter"),
     'virtual environment create': Text('virtualenv venv') + Key("enter"),
