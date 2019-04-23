@@ -45,6 +45,7 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'file right [<n>]': Key('c-pgdown/10:%(n)d'),
     'follow': Key(mod + "-b"),
     'forward': Key(mod + 'a-right'),
+    '(implementations|implements)': Key(mod + "a-b"),
     'import': Key('a-enter'),
     'open class': Key(mod + '-o'),
     'rename': Key('s-f6'),
