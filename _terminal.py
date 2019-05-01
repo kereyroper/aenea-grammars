@@ -40,6 +40,7 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer list details': Text("ls -lh") + Key("enter"),
     'deer list time [sorted]': Text("ls -ltr") + Key("enter"),
     'deer into': Text("cd "),
+    'deer (make|create|new)': Text("mkdir "),
 
     "foreground": Text("fg") + Key("enter"),
     "recent": Key("c-r"),
