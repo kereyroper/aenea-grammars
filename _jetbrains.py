@@ -35,6 +35,7 @@ grammar = dragonfly.Grammar('jetbrains', context=jetbrains_context)
 basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'action': Key(mod + 's-a'),
     'back': Key(mod + 'a-left'),
+    '(class open|open class)': Key(mod + '-n'),
     'debug (continue|run)': Key(mod + 'a-r'),
     'debug (next|over)': Key('f8'),
     'debug (step|into)': Key('f7'),
@@ -47,7 +48,6 @@ basics_mapping = aenea.configuration.make_grammar_commands('jetbrains', {
     'forward': Key(mod + 'a-right'),
     '(implementations|implements)': Key(mod + "a-b"),
     'import': Key('a-enter'),
-    'open class': Key(mod + '-n'),
     'rename': Key('s-f6'),
     'pain code': Key('ctrl:down') + Key('tab/30') + Key('s-tab') + Key('ctrl:up'),
     'pain debug': Key(mod + '-5'),
