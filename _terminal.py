@@ -42,10 +42,15 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     'deer into': Text("cd "),
     'deer (make|create|new)': Text("mkdir "),
 
+    "edit": Text("vim "),
+
     "foreground": Text("fg") + Key("enter"),
     "recent": Key("c-r"),
 
-    "grep Perl": Text("grep -P"),
+    "grep": Text("grep "),
+    "grep Perl": Text("grep -P "),
+
+    "process list": Text("ps aux "),
 
     "shell connect": Text("ssh "),
     "shell disconnect": Key("enter") + Key("tilde") + Key("dot"),
