@@ -51,6 +51,11 @@ terminal_mapping = aenea.configuration.make_grammar_commands('terminal', {
     "grep Perl": Text("grep -P "),
 
     "process list": Text("ps aux "),
+    "process IO nice": Text("ionice -c"),
+    "process IO nice low": Text("ionice -c3 -p "),
+    "process re nice": Text("renice -n "),
+    "process re nice low": Text("renice -n 10 "),
+    "process re nice hi": Text("renice -n -10 "),
 
     "shell connect": Text("ssh "),
     "shell disconnect": Key("enter") + Key("tilde") + Key("dot"),
